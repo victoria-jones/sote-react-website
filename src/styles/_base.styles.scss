@@ -1,0 +1,138 @@
+  /********************
+          BASE
+  ********************/
+  
+  /******
+  
+  REM sizing used for styling
+  base size: 1rem = 10px
+  
+  def:
+      - base browser sizes at 16px
+      - changed to 62.5% to equal 10px
+      - conversions are (desired px size)/16px
+          - change to percent
+  
+  ******/
+  
+  //BROWSER RESET
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  html {
+    font-size: 62.5%; //1rem = 10px
+  }
+  body {
+    box-sizing: border-box;
+    padding: 2rem;
+    //not part of browser reset
+    background-color: $color-grey-light;
+
+    @include respond(phone) {
+        padding: 0;
+    }
+  }
+  
+  /********************
+      ANIMATIONS
+  ********************/
+
+  
+  /********************
+      TYPOGRAPHY
+  ********************/
+body {
+    font-family: $font-primary;
+    line-height: 1.7;
+    font-size: $default-font-size;
+}
+
+.header-1, 
+.header-2,
+.header-3 {
+    font-family: $font-display-light;
+}
+
+.header-1 {
+    font-size: $title-font-size;
+    color: $color-white;
+    margin-bottom: 4rem;
+}
+
+.header-2 {
+    font-size: $display-font-size;
+    line-height: 1;
+    margin-bottom: 4rem;
+}
+
+.header-3 {
+    font-size: $display-font-size-small;
+    margin-bottom: 2.5rem;
+}
+
+.list {
+    list-style-type: none;
+    &__item {
+        //background-image: url(../img/bulletpoint.png);
+        background-repeat: no-repeat;
+        padding-left: 5rem;
+        &:not(last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+.page-header {
+    font-size: $title-font-size;
+    color: $color-white;
+    margin-top: 20rem;
+    text-align: center;
+    @include text-shadow;
+    @include respond(phone) {
+        margin-top: 12rem !important;
+    }
+}
+
+p {
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+}
+
+.email {
+    font-weight: bold;
+    font-size: $display-font-size-small;
+}
+
+  
+  /********************
+      UTILITIES
+  ********************/
+ 
+.margin-top-sml {
+    margin-top: 5rem;
+}
+
+.margin-top-med {
+    margin-top: 10rem;
+}
+
+.margin-bottom-med {
+    margin-bottom: 10rem;
+}
+.margin-bottom-sml {
+    margin-bottom: 5rem;
+}
+
+.torn-edge-fix {
+    padding-top: 8rem;
+}
+  
+  /********************
+      SHARED STYLES
+  ********************/
+
