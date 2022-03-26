@@ -1,0 +1,404 @@
+@import "../main.styles.scss";
+
+.site-nav, .footer-nav, .social-nav {
+
+    &__list {
+        list-style-type: none;
+        width: 100%;
+    }
+    
+    &__item {
+        display: inline-block;
+    }
+    
+}
+
+.nav-main {
+    width: 100%;
+    height: 10rem;
+    position: relative;
+    z-index: 4;
+
+     //logo and social media links
+    &__header {
+        color: $color-grey-light;
+        padding: 3rem 0;   
+        margin-bottom: 2rem;
+    }
+
+    &__img-holder {
+        width: 100%;
+        text-align: right;
+        position: absolute;
+        top: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__img {
+        height: 7rem;
+        display: inline-block;
+        @include drop-shadow;
+    }
+
+    &__social-nav {
+        justify-self: end;
+        text-align: right;
+    }
+
+    @include respond(tab-port) {
+        &__img-holder {
+            justify-content: flex-start;
+        }
+    }
+
+    @include respond(phone) {
+        &__header {
+            padding: 0;
+        }
+        &__img-holder {
+            display: none;
+        }
+    }
+
+}
+
+.site-nav {
+    
+    &__list {
+        display:flex;
+        justify-content: space-between;
+    }
+    &__link {
+        display: inline-block;
+        transition: all .2s;
+        @include text-shadow;
+        cursor: pointer;
+        &,
+        &:link,
+        &:visited {
+            color: $color-white;
+            font-family: $font-display-light;
+            text-decoration: none;
+        }
+
+        &:hover {
+            color: $color-primary-yellow;
+            transform: scale(1.2) translateY(-2px);
+        }
+        &:active {
+            color: $color-primary-yellow-dark;
+            transform: translateY(0);
+        }
+
+        @include respond(tab-port) {
+            font-size: 1.4rem;
+        }
+
+        @include respond(phone) {
+            font-size: inherit;
+        }
+    }
+
+    &__checkbox {
+        display: none;
+    }
+    //fixes the offset of the nav element cause by the width of the dropdown
+        //cuts off half of the width
+    &__droplist {
+        margin-right: -7.4rem;
+    }
+
+    &__dropitem {
+        height: 100%;
+    }
+
+    &__droplink {
+        font-size: $default-font-size !important;
+        border: none !important;
+        padding: 1rem 2rem;
+        display: block;
+    }
+
+    &__dropicon {
+        border: solid $color-white;
+        border-width: 0 2px 2px 0;
+        width: 1rem;
+        height: 1rem;
+        display: inline-block;
+        margin-bottom: .3rem;
+        transform: rotate(45deg);
+        transition: all .2s;
+    }
+    &__dropdown {
+        list-style-type: none;
+        background-color: $color-white;
+        //padding: 2rem;
+        @include box-shadow-light;
+        overflow: hidden;
+        max-height: 0;
+    }
+  
+    &__dropdown {  
+        transition: .8s cubic-bezier(0.83, 0, 0.17, 1);
+    }
+
+    //navigation toggle dropdown
+    &__checkbox:checked ~ &__dropbtn &__droplist &__dropdown {
+        max-height: 50rem;
+    }
+
+    &__checkbox:checked ~ &__dropbtn &__droplist &__dropicon {
+        transform: rotate(-45deg);
+    }
+    
+}
+
+.social-nav {
+    
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        fill: $color-white;
+        cursor: pointer;
+        @include drop-shadow;
+    }
+    &__list {
+        width: 100%;
+    }
+    &__item {
+        &:not(:last-child) {
+            margin-right: 3rem;
+        }
+    }
+
+    &__link:hover &__icon {
+        transition: all .2s;
+        fill: $color-primary-yellow;
+        transform: scale(1.2) translateY(-2px);
+    }
+    &__link:active &__icon {
+        transform: translateY(0);
+        fill: $color-primary-yellow-dark;
+    }
+
+    &__popup {
+        @include respond(phone) {
+            .social-nav__item {
+                &:not(:last-child) {
+                    margin-right: 7rem !important;
+                }
+            }
+        }
+        
+    }   
+    
+}
+
+.nav-mobile__,
+.nav-mobile__button,
+.nav-mobile__icon,
+.nav-mobile__img,
+.nav-mobile__background,
+.nav-mobile__checkbox {
+    display: none;
+}
+
+//mobile nav styles and functionality
+
+@include respond(phone) {
+
+    .site-nav, .nav-main__header {
+        z-index: 5;
+        width: 0;
+        opacity: 0;
+        //right: 0;
+        //left: -1000rem;
+        transition: .8s cubic-bezier(0.83, 0, 0.17, 1) .2s;
+    }
+
+    .site-nav {
+        position: fixed;
+        left: 0;
+        margin-top: 20vh;
+        font-size: 2.5rem;
+        &__list {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            //the sitenav is clickable on the edge of the screen but invisible this moves it out of range of the screen
+                //transition re-added to prevent a "skipping" to the negative margin while the menu moves out of view
+            margin-left: -6.1rem;
+            transition: margin-left .8s cubic-bezier(0.83, 0, 0.17, 1) .2s;
+        }
+        &__item {
+            &:not(:last-child) {
+                margin-bottom: 1.5rem;
+            }
+        }
+        &__link {
+            text-shadow: none;
+        }
+
+        &__droplist {
+            margin-right: -4rem; //for space the drop list arrow takes up, relign the item to center
+        }
+    }
+
+    .nav-main {
+        //transition: all .8s cubic-bezier(0.83, 0, 0.17, 1) .2s;
+        &__header {
+            position: absolute;
+            bottom: -70vh;
+        }
+        
+        &__social-nav {
+            position: fixed;
+            //width: 100%;
+            width: 0;
+            left: -100%;
+        }
+
+        .social-nav__list {
+            display: flex;
+            justify-content: center;
+            margin-left: -6.1rem;
+        }
+
+        .social-nav__icon {
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+
+        .social-nav__item {
+            &:not(:last-child) {
+                margin-right: 15vw;
+            }
+        }
+    }
+
+    .nav-mobile__button,
+    .nav-mobile__icon,
+    .nav-mobile__img,
+    .nav-mobile__background {
+        display: block;
+    }
+
+    .nav-mobile__button {
+        height: 6rem;
+        width: 6rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin-top: 1rem;
+        margin-right: 1rem;
+        z-index: 9999;
+        border-radius: 50%;
+        background-color: $color-white;
+        @include box-shadow-light;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .nav-mobile__icon {
+        position: relative;
+        margin-top: 2.8rem;
+        width: 4.3rem;
+        
+        &,
+        &::before,
+        &::after {
+            height: 3px;
+            background-color: $color-primary-green-med;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 2.8rem;
+            left: .8rem;
+            transition: all .5s;
+        }
+
+        &::before { top: 1.2rem; }
+        &::after { bottom: 1.2rem; }
+    }
+
+    .nav-mobile__img {
+        height: 4rem;
+        width: 12.5rem;
+        position: fixed;
+        z-index: 4;
+        top: 0;
+        left: 0;
+        //padding: 0;
+        margin-left: 1rem;
+        margin-top: 2rem;
+        fill: $color-white;
+        @include drop-shadow;
+    }
+
+    .nav-mobile__background {
+        height: 250%;
+        width: 0;
+        position: fixed;
+        right: -10rem;
+        top: -100vh;
+        z-index: 4;
+        //background-color: $color-primary-green-med;
+        background-image: linear-gradient(60deg, transparent 0%, transparent 50%, $color-primary-green-med 50%, $color-primary-green-med 100%);
+        background-repeat: no-repeat;
+        background-size: 270%;
+        background-position: -30%;
+        backface-visibility: hidden;
+        transition: 1s cubic-bezier(0.83, 0, 0.17, 1);
+
+        @include respond(phone-small) {
+            background-size: 280%;
+        }
+    }
+
+    //scroll out background
+    .nav-mobile__checkbox:checked ~ .nav-mobile__background {
+        width: 170%;
+        background-position: 100%;
+    }
+
+    //scroll out navigation
+    .nav-mobile__checkbox:checked ~ .site-nav,
+    .nav-mobile__checkbox:checked ~ .nav-main__header {
+        //right: 0;
+        width: 100%;
+        opacity: 1;
+    }
+    //scroll out social navigation
+    .nav-mobile__checkbox:checked ~ .nav-main__header .social-nav {
+        width: 100%;
+        left: initial;
+    }
+
+    //icon change to close 
+    .nav-mobile__checkbox:checked ~ .nav-mobile__button .nav-mobile__icon {
+        background-color: transparent;
+    }
+
+    .nav-mobile__checkbox:checked ~ .nav-mobile__button .nav-mobile__icon::before {
+        top: 0;
+        transform: rotate(135deg) scale(1.5, 1);
+    }
+
+    .nav-mobile__checkbox:checked ~ .nav-mobile__button .nav-mobile__icon::after {
+        top: 0;
+        transform: rotate(-135deg) scale(1.5, 1);
+    }
+
+    .nav-mobile__checkbox:checked ~ .site-nav .site-nav__list {
+        //refix the fix to stop the mobile menu from being invisible but clickable on the edge of the screen
+        margin-left: 0;
+    }
+
+
+}
