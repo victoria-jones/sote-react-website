@@ -16,9 +16,9 @@ export default function Footer () {
 
             <nav class="footer-nav">
                 <ul class="footer-nav__list">
-                    <li class="footer-nav__item"><WebsiteLink link="about" linkColor="white" className="footer-nav__link">About</WebsiteLink></li>
-                    <li class="footer-nav__item"><WebsiteLink link="genetics" linkColor="white" className="footer-nav__link">Genetics</WebsiteLink></li>
-                    <li class="footer-nav__item"><WebsiteLink link="contact" linkColor="white" className="footer-nav__link">Contact</WebsiteLink></li>
+                    <li class="footer-nav__item"><WebsiteLink link="about" linkColor="white" linkClass="footer-nav__link">About</WebsiteLink></li>
+                    <li class="footer-nav__item"><WebsiteLink link="genetics" linkColor="white" linkClass="footer-nav__link">Genetics</WebsiteLink></li>
+                    <li class="footer-nav__item"><WebsiteLink link="contact" linkColor="white" linkClass="footer-nav__link">Contact</WebsiteLink></li>
                 </ul>
             </nav>
             

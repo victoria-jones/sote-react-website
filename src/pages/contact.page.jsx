@@ -1,6 +1,10 @@
 
+
+import '../styles/pages/contact.styles.scss';
+
 export default function Contact () {
     return(
-        <p>contact us page</p>
+        <div className="mainContentContainer">
+        </div>
     );
 }
