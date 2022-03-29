@@ -1,0 +1,227 @@
+@import '../main.styles.scss';
+
+.whoweare {
+    background-image: url(../../assets/images/babies02_bg-large.jpg);
+    position: relative;
+
+    @include respond(phone) {
+        background-image: none;
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-image: url(../../assets/images/babies02_bg-small.jpg);
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+    }
+
+    @include respond(big-desktop) {
+        background-image: url(../../assets/images/babies02_bg-xl.jpg);
+    }
+
+}
+
+.seedtomed {
+    background-color: $color-white;
+
+    &__bg-img {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        background-image: url(../../assets/images/overhead-plant.jpg),
+                        url(../../assets/images/overhead-plant-med.jpg);
+        background-repeat: no-repeat, no-repeat;
+        background-position: (140% 0), (-30% 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+     
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include torn-edge-fix;
+        @include default-container-max-width-large;
+        @include default-section-container-padding;
+    }
+
+    &__header {
+        align-self: flex-start;
+        margin-bottom: 8rem;
+    }
+
+    @include respond(tab-port) {
+
+        &__container {
+            padding: 5rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        &__bg-img {
+            background-image: url(../../assets/images/overhead-plant-med.jpg),
+                                url(../../assets/images/overhead-plant-small.jpg);
+            background-position: (calc(100% + 20rem) 0), (-15rem 100%);
+        }
+    }  
+    
+    @include respond(phone) {
+        &__bg-img {
+            background-position: (calc(100% + 10rem) 12rem), (-15rem 100%);
+        }
+
+        &__header {
+            align-self: center;
+            width: 90%;
+        }
+        
+    }
+
+    @include respond(phone-med) {
+        &__bg-img {
+            background-position: (calc(100% + 10rem) 12rem), (-15rem 95%);
+        }
+    }
+
+    @include respond(xl-desktop) {
+        &__bg-img {
+            background-position: (calc(50% + 50rem) 0), (calc(50% - 50rem) 100%);  
+        }     
+    }
+}
+
+.innovating {
+    background-color: $color-primary-green-med;
+    color: $color-grey-light;
+    display: flex;
+    justify-content: center;
+    
+
+    &__container {
+        width: 100%;
+        justify-self: center;
+        @include default-container-max-width-large;
+        @include default-section-container-padding;
+
+        @include respond(phone) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+
+    &__section {
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__section--1 {
+        display: flex;
+        @include respond(tab-port) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &__p--1 {
+        width: 50%;
+        margin-right: 2rem;
+        align-self: center;
+
+        @include respond(tab-port) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+
+    &__img--1 {
+        @include respond(tab-port) {
+            width: 90%;
+        }
+    }
+
+    &__video {
+        @include respond(tab-port) {
+            width: 100%;
+        }
+    }
+
+    &__section--2 {
+        text-align: center;
+    }
+
+    &__subheader {
+        margin-bottom: 1rem;
+    }
+
+    &__social-name {
+        display: flex;
+        justify-content: center;
+        font-size: $display-font-size-small;
+        color: $color-primary-yellow;
+        font-weight: bold;
+        margin-right: 2rem;
+    }    
+
+    &__social-nav {
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+        max-width: 30rem;   //recently added this, not from moving things over from html site
+    }
+
+    &__social-nav__icon {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    &__social-nav__list {
+        text-align: left;
+        width: inherit;
+        align-self: flex-end;
+    }
+    
+}
+
+.thefamily {
+    background-color: $color-white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @include default-section-container-padding;
+        width: 90%;
+        @include default-container-max-width-large;
+    }
+
+    &__header {
+        align-self: center;
+    }
+
+    &__btn {
+        align-self: center;
+        margin-bottom: 7rem;
+    }
+
+    &__p {
+        padding-left: 2rem;
+        display: flex;
+        align-items: center;
+    }
+
+}

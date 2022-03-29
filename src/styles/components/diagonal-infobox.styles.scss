@@ -1,0 +1,94 @@
+@import '../main.styles.scss';
+
+.step {
+    @include default-skew-vertical;
+    background-color: $color-primary-green-med;
+    color: $color-grey-light;
+    overflow-x: hidden;
+    @include box-shadow-light;
+    
+    &:not(:last-child) {
+        margin-bottom: 10rem;
+    }
+
+    //help the images be more visible if there isn't a lot of text
+    &__p {
+        min-height: 10rem;
+        font-weight: 100;
+    }
+    
+    &__img {
+        min-width: 30rem;
+        max-height: 100%;
+        background-color: $color-white;
+        margin-left: -4rem;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &__img--1 {
+        background-image: url(../../assets/images/momplant.jpg);
+        background-position: 7rem center;
+     }
+
+    &__img--2 {
+        background-image: url(../../assets/images/cleanclones.jpg);
+        background-position: 4rem center;
+     }
+
+    &__img--3 { 
+        background-image: url(../../assets/images/teenplant.jpg);
+        background-position: 5rem center;
+    }
+
+    &__container {
+        display: flex;
+        @include default-unskew-vertical; 
+    }
+
+    &--wrapper {
+        @include default-container-padding;
+    }
+
+    @include respond(tab-port) {
+        transform: skew(0);
+        max-width: 50rem;
+        width: 90%;
+        max-height: 70rem;
+        overflow-y: hidden;
+        overflow-x: auto;
+         &__container {
+             transform: skew(0);
+            display: flex;
+            flex-direction: column;
+         }
+
+         &__img {
+             height: 35rem;
+             margin-top: -5rem;
+             margin-bottom: -5rem;
+             background-position: center 4rem;
+         }
+
+         &--wrapper {
+             @include default-skew-horizontal;
+             background-color: $color-primary-green-med;
+
+             & > * {
+                 @include default-unskew-horizontal;
+             }
+         }
+    }
+
+    @include respond(phone) {
+        max-width: 30rem;
+        &--wrapper {
+            padding: 0 3rem 3rem 3rem;
+        } 
+    }
+
+    @include respond(phone-med) {
+        width: 95%;
+    }
+}

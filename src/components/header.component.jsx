@@ -8,7 +8,7 @@ import sote_full_logo_stacked from '../assets/logos/SOTE-full-logo-stacked-white
 
 export default function Header () {
     return(
-        <header class="header home__header">
+        <header className="header home__header">
             <img src={sote_full_logo} alt="Salt Of The Earth Nursery" className="header__img home__header__img header__img--big" />
             <img src={sote_full_logo_stacked} alt="Salt Of The Earth Nursery" className="header__img home__header__img header__img--small" />
             <CustomButton
@@ -18,7 +18,7 @@ export default function Header () {
                 View Genetics
             </CustomButton>
 
-            <div class="bg-video">
+            <div className="bg-video">
                 <video className="bg-video__content" autoPlay muted loop playsInline>
                     <source src={bg_video} type="video/mp4" />
                     Your browser does not support this video :(

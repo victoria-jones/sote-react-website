@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import '../styles/components/link.styles.scss';
+import '../styles/components/website-link.styles.scss';
 
 const WebsiteLink = ({ link, linkColor, linkLocation, linkClass, children }) => (
     <Link to={`/${link === 'home' ? '' : link}`} 
