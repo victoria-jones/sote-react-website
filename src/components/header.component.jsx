@@ -6,9 +6,9 @@ import bg_video from '../assets/videos/bg_video_01.mp4';
 import sote_full_logo from '../assets/logos/SOTE-full-logo-white.png';
 import sote_full_logo_stacked from '../assets/logos/SOTE-full-logo-stacked-white.png';
 
-export default function Header () {
+export default function Header ({ classNames, children }) {
     return(
-        <header className="header home__header">
+        <header className={`header home__header`}>
             <img src={sote_full_logo} alt="Salt Of The Earth Nursery" className="header__img home__header__img header__img--big" />
             <img src={sote_full_logo_stacked} alt="Salt Of The Earth Nursery" className="header__img home__header__img header__img--small" />
             <CustomButton

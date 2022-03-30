@@ -6,34 +6,42 @@ import GreenContainer from '../components/green-container.component';
 import CustomButton from '../components/custom-button.component';
 
 export default function Consultation () {
+
+    // drop down list items to pass over to 'drop-down-list-infobox' population
+    const item1 = {
+        'name': 'Greenhouse design'
+    };
+    const item2 = {
+        'name': 'Greenhouse build management'
+    };
+    const item3 = {
+        'name': 'Plant nutrition'
+    };
+    const item4 = {
+        'name': 'Soil health/Microbial life'
+    };
+    const item5 = {
+        'name': 'IPM',
+        'info': 'Internal Pest Management'
+    };
+    const item6 = {
+        'name': 'Cultivation space and team efficiency',
+        'info': 'can guarantee at least 5 harvests a year regardless of operation size'
+    };
+    const item7 = {
+        'name': 'Nursery space/team efficiency',
+        'info': '100,000 clones produced every month for every 10,000 square feet devoted to mothers and clones AND 9,200 ready-to-flower immature plants every month out of every 10,000 square feet devoted to teenage plant production'
+    };
+    const listItems = [item1, item2, item3, item4, item5, item6, item7];
+
     return(
-        <div clasName="mainContentContainer">
+        <div className="mainContentContainer">
 
             <TornEdgeSection classNames="specialties">
                 <div className="specialties__bg-img">
                     <div className="specialties__container">
                         <h2 className="specialties__header header-2">Specialties include & not limited to:</h2>
-                        <ul className="drop-down-list specialties__drop-down-list">
-                            <li className="drop-down-list__item"><div className="drop-down-list__item--wrapper">Greenhouse design</div></li>
-                            <li className="drop-down-list__item"><div className="drop-down-list__item--wrapper">Greenhouse build management</div></li>
-                            <li className="drop-down-list__item"><div className="drop-down-list__item--wrapper">Plant nutrition</div></li>
-                            <li className="drop-down-list__item"><div className="drop-down-list__item--wrapper">Soil health/Microbial life</div></li>
-                            <li className="drop-down-list__item drop-down-list__drop"><div className="drop-down-list__item--wrapper">IPM <div className="drop-down-list__dropicon"></div></div>
-                                <ul className="drop-down-list__drop__list">
-                                    <li className="drop-down-list__drop__item">Internal Pest Management</li>
-                                </ul>
-                            </li>
-                            <li className="drop-down-list__item drop-down-list__drop"><div className="drop-down-list__item--wrapper">Cultivation space and team efficiency <div className="drop-down-list__dropicon"></div></div>
-                                <ul className="drop-down-list__drop__list">
-                                    <li className="drop-down-list__drop__item">can guarantee at least 5 harvests a year regardless of operation size</li>
-                                </ul>
-                            </li>
-                            <li className="drop-down-list__item drop-down-list__drop"><div className="drop-down-list__item--wrapper">Nursery space/team efficiency <div className="drop-down-list__dropicon"></div></div>
-                                <ul className="drop-down-list__drop__list">
-                                    <li className="drop-down-list__drop__item">100,000 clones produced every month for every 10,000 square feet devoted to mothers and clones AND 9,200 ready-to-flower immature plants every month out of every 10,000 square feet devoted to teenage plant production</li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <DropDownListInfoBox listItems={listItems} />
                     </div>
                 </div>
             </TornEdgeSection>
@@ -104,8 +112,8 @@ export default function Consultation () {
                 </div>
             </GreenContainer>
 
-            <section class="inquire">
-                <div class="inquire__container">
+            <section className="inquire">
+                <div className="inquire__container">
                     <CustomButton linkToPage="contact" className="inquire__btn">Inquire Here</CustomButton>
                 </div>
             </section>
