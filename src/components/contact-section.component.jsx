@@ -10,17 +10,17 @@ export default function ContactSection ({ componentPage }) {
                 
                 <form action="#" className="contact__form form">
                     <div className="form__group">
-                        <input type="text" className="form__input" placeholder="Name" id="name"  name="user_name" maxlength="30" required />
+                        <input type="text" className="form__input" placeholder="Name" id="name"  name="user_name" maxLength="30" required />
                         <label htmlFor="name" className="form__label">Name</label><span className="form__error"></span>
                     </div>
 
                     <div className="form__group">
-                        <input type="email" className="form__input" placeholder="Email" id="email"  name="user_email" maxlength="100" required />
-                        <label for="email" className="form__label">Email</label><span className="form__error"></span>
+                        <input type="email" className="form__input" placeholder="Email" id="email"  name="user_email" maxLength="100" required />
+                        <label htmlFor="email" className="form__label">Email</label><span className="form__error"></span>
                     </div>
 
                     <div className="form__group">
-                        <textarea className="form__textarea" placeholder="Message" id="message" name="message" maxlength="1500" minlength="10" required></textarea>
+                        <textarea className="form__textarea" placeholder="Message" id="message" name="message" maxLength="1500" minLength="10" required></textarea>
                         <label htmlFor="message" className="form__label">Message</label><span className="form__error"></span>
                     </div>
 

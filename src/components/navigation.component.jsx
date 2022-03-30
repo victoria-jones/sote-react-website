@@ -10,6 +10,14 @@ import { ReactComponent as SoteIcon } from '../assets/icons/SOTE_mobile.svg';
 import soteLogo from '../assets/logos/SOTE_logo.png';
 
 export default function Navigation () {
+
+    const closeTheMenu = () => {
+        const checkBox = document.getElementById("nav-mobile-toggle");
+        if(checkBox.checked) {
+            checkBox.checked = false;
+        }
+    };
+
     return(
         <div className="nav-main">
 
@@ -47,12 +55,13 @@ export default function Navigation () {
                 
                 <ul className="site-nav__list">
                     <input type="checkbox" className="site-nav__checkbox" id="nav-droptoggle" />
-                    <li className="site-nav__item"><Link to="/" className="site-nav__link">Home</Link></li>
-                    <li className="site-nav__item"><Link to="about" className="site-nav__link">About us</Link></li>
-                    <li className="site-nav__item"><Link to="genetics" className="site-nav__link">Genetics</Link></li>
-                    <li className="site-nav__item"><Link to="consultation" className="site-nav__link">Consultations</Link></li>
-                    <li className="site-nav__item"><Link to="contact" className="site-nav__link">Contact us</Link></li>
+                    <li className="site-nav__item"><Link to="/" className="site-nav__link" onClick={closeTheMenu}>Home</Link></li>
+                    <li className="site-nav__item"><Link to="about" className="site-nav__link" onClick={closeTheMenu}>About us</Link></li>
+                    <li className="site-nav__item"><Link to="genetics" className="site-nav__link" onClick={closeTheMenu}>Genetics</Link></li>
+                    <li className="site-nav__item"><Link to="consultation" className="site-nav__link" onClick={closeTheMenu}>Consultations</Link></li>
+                    <li className="site-nav__item"><Link to="contact" className="site-nav__link" onClick={closeTheMenu}>Contact us</Link></li>
                 </ul>
+
             </nav>
 
         </div> 

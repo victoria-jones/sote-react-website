@@ -10,12 +10,12 @@ export default function Home () {
     return(
         <div className="mainContentContainer">
             <TornEdgeSection>
-                <div class="clones__container">
+                <div className="clones__container">
                     <img src={plantSmall} alt="small cannabis plant" className="clones__img" />
                     <div className="clones__info">
                         <h2 className="clones__header header-2">Commited to providing the most reliable clean start </h2>
                         
-                        <ul class="clones__list list">
+                        <ul className="clones__list list">
                             <li className="clones__item list__item">We have the largest selection of hard to find strains both new and old at our disposal to grow.</li>
                             <li className="clones__item list__item">Our customized room provides us with an automated and optimal enviornment in real time, allowing our 60+ different strains to thrive happy and healthy. </li>
                             <li className="clones__item list__item">All of our strains are organic</li>

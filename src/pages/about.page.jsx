@@ -49,7 +49,7 @@ export default function About () {
                         </p>
                         
                         <div className="innovating__img innovating__img--1">
-                            <video loop="true" autoPlay="true" muted="true" width="400" className="video innovating__video">
+                            <video loop autoPlay muted width="400" className="video innovating__video">
                                 <source src={innovationVideo} type="video/mp4" />
                                 Sorry, your browser doesn't support this embedded video :(
                             </video>
