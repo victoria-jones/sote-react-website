@@ -1,0 +1,64 @@
+@import '../main.styles.scss';
+
+.genetics-filter {
+    width: 100%;
+    background-color: $color-primary-green;
+    color: $color-grey-light;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    
+
+    @include respond(phone) {
+        &--wrapper {
+            justify-content: center;
+        }    
+    }
+
+    &--wrapper {
+        width: 100%;
+        max-width: 115rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+    }
+
+    &__menu {   
+        font-family: inherit;
+        font-size: inherit;
+        padding: 1rem;
+        min-width: 15rem;
+        margin-left: 1.2rem;
+        @include border-radius;
+
+        &:focus {
+            border-color: $color-primary-yellow;
+        }
+        
+    }
+
+    &__label {
+        font-size: 2rem;
+    }
+
+    @include respond(phone) {
+        &__menu {
+            width: 65%;
+        }
+    }
+
+    @include respond(phone-med) {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+        &__label {
+            font-size: 1.8rem;
+        }
+        &__menu {
+            width: 90%;
+            margin-left: 0;
+        }
+    }
+}

@@ -10,13 +10,14 @@ import Consultation from './pages/consultation.page';
 import Footer from './components/footer.component';
 import Navigation from './components/navigation.component';
 import Header from './components/header.component';
+import Main from './components/main.component';
 
 function App() {
   return (
     <div className="App container">
       <Navigation />
       <Header />
-      <main>
+      <Main>
         <Routes>
           <Route path='/' element={<Home/>} exact />
           <Route path='/about' element={<About/>} />
@@ -24,7 +25,7 @@ function App() {
           <Route path='/genetics' element={<Genetics/>} />
           <Route path='/consultation' element={<Consultation/>} />
         </Routes>
-      </main>
+      </Main>
       <Footer />
     </div>
   );

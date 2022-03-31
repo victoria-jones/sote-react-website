@@ -7,14 +7,12 @@
     background-attachment: fixed;
     min-height: 100vh;
  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: center;
+    //align-items: center;
  
     @include respond(phone) {
-         //background-image: url(../img/bud03_bg-small.jpg);
-         //background-attatchment:fixed mobile browser fix 
          background-image: none;
          &::after {
              content: "";

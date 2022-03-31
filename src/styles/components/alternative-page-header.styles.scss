@@ -1,2 +1,13 @@
 @import '../main.styles.scss';
 
+.alternative-page-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: transparent;
+}
+
+.contact__header {
+    background-color: transparent;
+}

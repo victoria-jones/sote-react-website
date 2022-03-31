@@ -6,7 +6,7 @@ import SocialNav from '../components/social-nav.component';
 
 export default function Contact () {
     return(
-        <div className="mainContentContainer">
+        <div className="mainContentContainer contact">
             <AlternativePageHeader
                 altHeaderClasses="contact__header"
                 pageTitle="Contact Us"
@@ -19,6 +19,6 @@ export default function Contact () {
                 <SocialNav navClass="contact__social-nav" />
             </AlternativePageHeader>
             <ContactSection />
-        </div>
+        </div>  
     );
 }

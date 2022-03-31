@@ -1,0 +1,97 @@
+@import '../main.styles.scss';
+
+.genetics__side-menu {
+    background-color: $color-grey;
+    @include box-shadow-light;
+    margin-left: 2rem;
+    padding: 2rem;
+
+    &__header {
+        color: $color-primary-green-med;
+    }
+
+    &--list {
+        list-style-type: none;
+        margin-left: 2rem;
+    }
+
+    &__checkbox,
+    &__icon {
+        display: none;
+    }
+
+    //accordion menu for phones
+    @include respond(tab-port) {
+        margin-left: 0;
+        margin-top: -2rem;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        //overflow-x: hidden;
+
+        &--list {
+            background-color: $color-grey-light;
+            width: 100%;
+            margin-left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            //padding-bottom: 1rem;
+            overflow: hidden;
+            max-height: 0;
+        }
+
+        &--item {
+            &:not(:last-child) { margin-bottom: 1rem; }
+        }
+
+        &--list,
+        &--item {
+            transition: .8s cubic-bezier(0.83, 0, 0.17, 1);
+        }
+
+        &__header {
+            margin-bottom: 0;
+            margin-top: -3rem;  //remove space made by the ::before
+            padding: .5rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color-white;
+            }
+        }
+
+        &__icon {
+            position: relative;
+            width: 1.5rem;
+            bottom: -2.5rem;
+            left: 90%;
+
+            &,
+            &::before {
+                height: 3px;
+                background-color: $color-primary-green-med;
+                display: inline-block;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 1.5rem;
+                transform: rotate(90deg);
+                transition: .8s cubic-bezier(0.83, 0, 0.17, 1);
+            }
+        }
+
+        &__checkbox:checked ~ &__button &__icon::before {
+            transform: rotate(180deg);
+        }
+
+        &__checkbox:checked ~ &--list {
+            padding-bottom: 1rem;
+            max-height: 100vh; 
+            overflow: auto;
+        }
+    }
+    
+}

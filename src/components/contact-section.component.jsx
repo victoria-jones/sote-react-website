@@ -3,8 +3,8 @@ import '../styles/components/contact-section.styles.scss';
 export default function ContactSection ({ componentPage }) {
     return(
         <section className={`component__contact
-                            ${componentPage ? `${componentPage}__contact` : ''}`}
-        >
+                            ${componentPage ? `${componentPage}__contact` : ''}
+        `}>
             <div className="contact__form-wrapper form-wrapper component__contact__form-wrapper margin-bottom-sml margin-top-sml">
                 <h2 className="margin-bottom-sml">Contact Us</h2>
                 

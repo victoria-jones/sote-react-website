@@ -143,6 +143,13 @@ export default function Header ({ classNames, children }) {
                 </header>
             );
 
+        case '/contact':
+            return(
+                <header className="main-contact">
+                    
+                </header>
+            );
+
         default:
            return null; 
     }
