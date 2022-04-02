@@ -3,18 +3,22 @@ import '../styles/pages/genetics.styles.scss';
 import SideMenu from '../components/side-menu.component';
 import FilterMenu from '../components/filter-menu.component';
 import CustomCard from '../components/custom-card.component';
+import ContactSection from '../components/contact-section.component';
+import SocialNav from '../components/social-nav.component';
+
+import strains from '../assets/json/strains.json';
 
 export default function Genetics () {
     return(
         <div className="mainContentContainer">
             <section className="genetics">
                 <FilterMenu />
-                <SideMenu />
+                <SideMenu listItems={strains} />
 
-                <div class="genetics__container">
-                    <div class="genetics-section">
-                        <h2 class="genetics-section__header header-2">Featured</h2>
-                        <p class="genetics-section__p">
+                <div className="genetics__container">
+                    <div className="genetics-section">
+                        <h2 className="genetics-section__header header-2">Featured</h2>
+                        <p className="genetics-section__p">
                             Please know that all of our products are seasonal or temporary. Here is a current featured list we held recently that are our patients' favorites. All is grown on an organic metrc compliant farm. 
                         </p>
                     
@@ -22,20 +26,31 @@ export default function Genetics () {
 
                     <div className="genetics-card__container">
 
-                        <CustomCard />
-                        <CustomCard />
-                        <CustomCard />
+                        {
+                            strains.map((strain, key) => {
+                                return(
+                                    <CustomCard cardFill={strain} key={key} />
+                                ); 
+                            })
+                        }
 
                     </div>
 
-                    <div class="genetics-section"></div>
-                    <div class="genetics-section"></div>
+                    <div className="genetics-section"></div>
+                    <div className="genetics-section"></div>
                 </div>
             </section>
             
-            <section className="genetics__contact">
-                contact area
-            </section>
+                <ContactSection includeHeader componentPage="genetics" headerClass="contact__header margin-bottom-med margin-top-med">
+                    <div className="contact__header--wrapper">
+                        <h2>Have any Questions?</h2>
+                        <p className="contact__p">
+                            Contact us directly for more information on our genetics and follow us on social media to get immediate updates on our available gentics.
+                        </p>
+
+                        <SocialNav navClass="contact__social-nav" />
+                    </div> 
+                </ContactSection>
 
         </div>
     );

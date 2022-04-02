@@ -24,7 +24,7 @@ export default function Home () {
 
                         <WebsiteLink
                             link="about"
-                            linkClass="clonse__link"
+                            linkClass="clones__link"
                         >
                             Learn more about SOTE Nursery Network
                         </WebsiteLink>

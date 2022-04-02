@@ -11,10 +11,12 @@ import Footer from './components/footer.component';
 import Navigation from './components/navigation.component';
 import Header from './components/header.component';
 import Main from './components/main.component';
+import Popup from './components/popup.component';
 
 function App() {
   return (
     <div className="App container">
+      <Popup />
       <Navigation />
       <Header />
       <Main>

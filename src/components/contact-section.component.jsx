@@ -1,10 +1,24 @@
 import '../styles/components/contact-section.styles.scss';
 
-export default function ContactSection ({ componentPage }) {
+import TornEdgeSection from './torn-edge-section.component';
+
+export default function ContactSection ({ componentPage, includeHeader, children, headerClass }) {
     return(
         <section className={`component__contact
                             ${componentPage ? `${componentPage}__contact` : ''}
         `}>
+            {
+                includeHeader ?
+                (
+                    <TornEdgeSection
+                        classNames={headerClass ? headerClass : ''}
+                    >
+                        { children}
+                    </TornEdgeSection>
+                )
+                :
+                null
+            }
             <div className="contact__form-wrapper form-wrapper component__contact__form-wrapper margin-bottom-sml margin-top-sml">
                 <h2 className="margin-bottom-sml">Contact Us</h2>
                 

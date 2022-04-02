@@ -1,0 +1,108 @@
+@import '../main.styles.scss';
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color-white, .5);
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    opacity: 0;
+    z-index: -1000;
+
+    transition: opacity .5s;
+
+    &--wrapper {
+        position: relative;
+        background-color: $color-white;
+        width: 95vw;
+        max-width: 100rem;
+        max-height: 70rem;
+        display: flex;
+        overflow-x: hidden;
+        @include box-shadow-light;
+
+        height: 0;
+        bottom: 110%;
+
+        transition: bottom .8s cubic-bezier(0.83, 0, 0.17, 1);
+
+        @include respond(tab-port) {
+            max-height: 95vh;
+        }
+    }
+
+    &__message-sent {
+        display: none;
+        margin: 0 auto;
+
+        .message-sent--successful,
+        .message-sent--error {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: 80%;
+
+            h2 {
+                text-align: center;
+            }
+
+            @include respond(phone) {
+                width: 95%;
+            }
+        }
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 101;
+        border-radius: 50%;
+        background-color: $color-white;
+        width: 6rem;
+        height: 6rem;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition: .2s;
+
+        top: 1.5rem;
+        right: 1.5rem;
+        @include box-shadow-light;
+
+        &:active {
+            @include box-shadow-pushed;
+            transform: translateY(1px);
+        }
+    }
+    &__icon {
+        position: relative;
+        width: 4rem;
+        top: 2.8rem;
+        left: 1rem;
+        transform: rotate(45deg);
+
+        &,
+        &::before {
+            height: 3px;
+            background-color: $color-primary-green-med;
+            display: inline-block;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 4rem;
+            transform: rotate(90deg);
+        }
+    }
+
+}

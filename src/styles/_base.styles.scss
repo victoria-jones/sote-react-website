@@ -79,7 +79,7 @@ body {
 .list {
     list-style-type: none;
     &__item {
-        //background-image: url(../img/bulletpoint.png);
+        background-image: url(../assets/images/bulletpoint.png);
         background-repeat: no-repeat;
         padding-left: 5rem;
         &:not(last-child) {
