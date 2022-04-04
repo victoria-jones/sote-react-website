@@ -15,7 +15,7 @@ export default function About () {
             <TornEdgeSection classNames="seedtomed">
                 <div className="seedtomed__bg-img">
                     <div className="seedtomed__container">
-                        <h2 className="seedtomed__header header-2">Salt Of The Earth clone process</h2>
+                        <h2 className="seedtomed__header header-2">Clone process</h2>
                         <DiagonalInfoBox 
                             image="img--1"
                             title="Step 1"
@@ -34,7 +34,7 @@ export default function About () {
                             text="Finally, with proper humidity and water intake- by week 3 the plants have healthy root growth and are ready for transplant."
                         />
         
-                        <Link to="genetics" className="link seedtomed__link">See our genetics</Link>
+                        <Link to="/genetics" className="link seedtomed__link">See our genetics</Link>
                     </div>
                 </div>  
             </TornEdgeSection>

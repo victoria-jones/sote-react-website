@@ -1,0 +1,83 @@
+[
+    {
+        "nurseryID": 1,
+        "strainID": 1,
+        "stock": {
+                "total": 308,
+                "transition": 89,
+                "over10inches": 55,
+                "over18inches": 253
+        }
+    },
+    {
+        "nurseryID": 1,
+        "strainID": 2,
+        "stock": {
+                "total": 98,
+                "transition": 78,
+                "over10inches": 39,
+                "over18inches": 59
+        }
+    },
+    {
+        "nurseryID": 1,
+        "strainID": 3,
+        "stock": {
+                "total": 587,
+                "transition": 232,
+                "over10inches": 291,
+                "over18inches": 296
+        }
+    },
+    {
+        "nurseryID": 1,
+        "strainID": 4,
+        "stock": {
+                "total": 55,
+                "transition": 50,
+                "over10inches": 16,
+                "over18inches": 39
+        }
+    },
+    {
+        "nurseryID": 1,
+        "strainID": 5,
+        "stock": {
+                "total": 89,
+                "transition": 45,
+                "over10inches": 66,
+                "over18inches": 23
+        }
+    },
+    {
+        "nurseryID": 1,
+        "strainID": 6,
+        "stock": {
+                "total": 67,
+                "transition": 41,
+                "over10inches": 31,
+                "over18inches": 36
+        }
+    },
+    {
+        "nurseryID": 1,
+        "strainID": 7,
+        "stock": {
+                "total": 68,
+                "transition": 22,
+                "over10inches": 22,
+                "over18inches": 46
+        }
+    },
+    {
+        "nurseryID": 1,
+        "strainID": 8,
+        "stock": {
+                "total": 56,
+                "transition": 43,
+                "over10inches": 23,
+                "over18inches": 33
+        }
+    }
+
+]

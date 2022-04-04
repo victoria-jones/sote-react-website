@@ -17,6 +17,7 @@ import { ReactComponent as ArrowUpIcon } from '../assets/icons/arrow-with-circle
 import { ReactComponent as ArrowDownIcon } from '../assets/icons/arrow-with-circle-down.svg';
 import { ReactComponent as HomeIcon } from '../assets/icons/home3.svg';
 import { ReactComponent as SunIcon } from '../assets/icons/sun.svg';
+import { ReactComponent as MountainLogo } from '../assets/logos/mountain_logo.svg';
 
 export default function CustomCard ({ cardFill }) {
     const [strainGrow, setStrainGrow] = useState(null);
@@ -46,11 +47,28 @@ export default function CustomCard ({ cardFill }) {
 
     return(                           
             <div className="genetics-card">
-                <div className="genetics-card__img"
-                    style={{backgroundImage: "url(/images/thumbnails/"+cardFill.thumbnailphoto+")"}}
-                >
-                    {cardFill.thumbnailphoto}
-                </div>
+                {
+                    cardFill.thumbnailphoto === "no photo" || cardFill.thumbnailphoto === "" ?
+                    (
+                        <div className="genetics-card__img"
+                            style={{backgroundImage: "url(/images/thumbnails/nophoto-tb.jpg)"}}
+                        >   
+                            <div className="genetics-card__img--nophoto">
+                                <span className="genetics-card__img--nophoto__text">no photo</span>
+                                <MountainLogo className="genetics-card__img--nophoto__logo" />
+                            </div>
+                        </div>
+                    )
+                    :
+                    (
+                        <div className="genetics-card__img"
+                            style={{backgroundImage: "url(/images/thumbnails/"+cardFill.thumbnailphoto+")"}}
+                        >
+                            {cardFill.thumbnailphoto}
+                        </div>
+                    )
+                }
+                
                 <div className="genetics-card__info">
                     <h3 className="genetics-card__header header-3">{cardFill.name}</h3>
                     <div className="genetics-card__type">

@@ -51,7 +51,7 @@
         }
 
         &__header {
-            margin-bottom: 0;
+            margin-bottom: 0 !important;
             margin-top: -3rem;  //remove space made by the ::before
             padding: .5rem;
             cursor: pointer;
