@@ -3,4 +3,8 @@
 {
     "nurseryID": 1,
     "name": "Downtown Nursery",
+    "address": "555 street road, City CA 55555",
+    "phone": 5555555555,
+    "email": "email@email.com"
+
 }
