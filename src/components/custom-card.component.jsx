@@ -13,6 +13,8 @@
 import { useState, useEffect } from 'react';
 import '../styles/components/custom-card.styles.scss';
 
+import CustomButton from './custom-button.component';
+import WebsiteLink from './website-link.component';
 import { ReactComponent as ArrowUpIcon } from '../assets/icons/arrow-with-circle-up.svg';
 import { ReactComponent as ArrowDownIcon } from '../assets/icons/arrow-with-circle-down.svg';
 import { ReactComponent as HomeIcon } from '../assets/icons/home3.svg';
@@ -107,8 +109,8 @@ export default function CustomCard ({ cardFill }) {
 
                         }
                     <div className="genetics-card__btns">
-                        <a href="#" className="card-btn">Contact Us</a>
-                        <a href="#" className="card-link">Quick View</a>
+                        <CustomButton notALink className="card-btn">Contact Us</CustomButton>
+                        <WebsiteLink notALink linkClass="card-link">Quick View</WebsiteLink>
                     </div> 
                     <input type="hidden" value={cardFill} />
                 </div>

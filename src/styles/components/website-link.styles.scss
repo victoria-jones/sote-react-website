@@ -25,6 +25,7 @@
         background-size: 225%;
         background-position: initial;
         color: $color-white;
+        cursor: pointer;
     }
     &:active {
         transform: scale(.9);
@@ -39,6 +40,10 @@
             border-bottom: 1rem solid $color-grey-light;
             transition: all .3s;
         }
+    }
+
+    &__span {
+        font-size: $default-font-size;
     }
 }
 

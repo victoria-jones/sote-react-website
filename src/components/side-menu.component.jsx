@@ -1,5 +1,6 @@
 import '../styles/components/side-menu.styles.scss';
 
+import WebsiteLink from './website-link.component';
 import strains from '../assets/json/strains.json';
 
 export default function SideMenu ({ listItems }) {
@@ -16,7 +17,11 @@ export default function SideMenu ({ listItems }) {
                 {
                     listItems.map((item, key) => {
                         return(
-                            <li className="genetics__side-menu--item" key={`side-menu-item--${key}`}><a href="#" className="genetics__side-menu--link link--green" key={`side-menu-link--${key}`}>{item.name}</a></li>
+                            <li className="genetics__side-menu--item" key={`side-menu-item--${key}`}>
+                                <WebsiteLink notALink linkClass="genetics__side-menu--link" linkColor="green" key={`side-menu-link--${key}`}>
+                                    {item.name}
+                                </WebsiteLink>
+                            </li>
                         );
                     })
                 }

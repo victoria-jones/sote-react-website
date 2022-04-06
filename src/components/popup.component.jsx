@@ -1,6 +1,12 @@
+import { useState, useEffect } from 'react';
 import '../styles/components/popup.styles.scss';
 
 export default function Popup () {
+
+    const openPopup = () => {
+        console.log("toggle popup");
+    }
+
     return(
         <div className="genetics-popup popup">
             <div className="genetics-popup--wrapper popup--wrapper"> 

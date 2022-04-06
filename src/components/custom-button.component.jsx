@@ -1,11 +1,18 @@
 import '../styles/components/custom-button.styles.scss';
 import { Link } from 'react-router-dom';
 
-const CustomButton = ({ children, linkToPage, className }) => (
-    <Link to={`/${linkToPage === 'home' ? '' : linkToPage}`}
-     className={`btn ${className}`}>
-        { children }
-    </Link>
-);
-
-export default CustomButton;
+export default function CustomButton ({ children, linkToPage, className, notALink }) {
+    switch (notALink) {
+        case true:
+            return(
+                <div className={`btn ${className}`}>{ children }</div>
+            );
+        default:
+            return(
+                <Link to={`/${linkToPage === 'home' ? '' : linkToPage}`}
+                className={`btn ${className}`}>
+                    { children }
+                </Link>
+            );
+    }
+}
