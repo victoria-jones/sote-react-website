@@ -47,73 +47,75 @@ export default function CustomCard ({ cardFill }) {
 
     },[cardFill]);
 
-    return(                           
-            <div className="genetics-card">
-                {
-                    cardFill.thumbnailphoto === "no photo" || cardFill.thumbnailphoto === "" ?
-                    (
-                        <div className="genetics-card__img"
-                            style={{backgroundImage: "url(/images/thumbnails/nophoto-tb.jpg)"}}
-                        >   
-                            <div className="genetics-card__img--nophoto">
-                                <span className="genetics-card__img--nophoto__text">no photo</span>
-                                <MountainLogo className="genetics-card__img--nophoto__logo" />
-                            </div>
-                        </div>
-                    )
-                    :
-                    (
-                        <div className="genetics-card__img"
-                            style={{backgroundImage: "url(/images/thumbnails/"+cardFill.thumbnailphoto+")"}}
-                        >
-                            {cardFill.thumbnailphoto}
-                        </div>
-                    )
-                }
-                
-                <div className="genetics-card__info">
-                    <h3 className="genetics-card__header header-3">{cardFill.name}</h3>
-                    <div className="genetics-card__type">
-                        {
-                            cardFill.type[0] === "sativa" ?
-                            <ArrowUpIcon className="genetics__key--icon genetics-card__type--icon--1" />
-                            :
-                            <ArrowDownIcon className="genetics__key--icon genetics-card__type--icon--2" />
-                        }
-                        <span className="genetics__key--icon-name">{strainType}</span>
-                    </div>
-                        {
-                            cardFill.grow.length > 1 ?
-                            (
-                                <div className="genetics-card__care">
-                                    <HomeIcon className="genetics__key--icon genetics-card__type--icon--3" />
-                                    <SunIcon className="genetics__key--icon genetics-card__type--icon--4" />
-                                    <span className="genetics__key--icon-name">Grows {strainGrow}</span>
-                                </div>
-                            )
-                            :
-                            cardFill.grow[0] === "indoors" ?
-                            (
-                                <div className="genetics-card__care">
-                                    <HomeIcon className="genetics__key--icon genetics-card__type--icon--3" />
-                                    <span className="genetics__key--icon-name">Grows {strainGrow}</span>
-                                </div>
-                            )
-                            :
-                            (
-                                <div className="genetics-card__care">
-                                    <SunIcon className="genetics__key--icon genetics-card__type--icon--4" />
-                                    <span className="genetics__key--icon-name">Grows {strainGrow}</span>
-                                </div>
-                            )
+    return( 
 
-                        }
-                    <div className="genetics-card__btns">
-                        <CustomButton notALink className="card-btn">Contact Us</CustomButton>
-                        <WebsiteLink notALink linkClass="card-link">Quick View</WebsiteLink>
-                    </div> 
-                    <input type="hidden" value={cardFill} />
+        <div className="genetics-card">
+            {
+                cardFill.thumbnailphoto === "no photo" || cardFill.thumbnailphoto === "" ?
+                (
+                    <div className="genetics-card__img"
+                        style={{backgroundImage: "url(/images/thumbnails/nophoto-tb.jpg)"}}
+                    >   
+                        <div className="genetics-card__img--nophoto">
+                            <span className="genetics-card__img--nophoto__text">no photo</span>
+                            <MountainLogo className="genetics-card__img--nophoto__logo" />
+                        </div>
+                    </div>
+                )
+                :
+                (
+                    <div className="genetics-card__img"
+                        style={{backgroundImage: "url(/images/thumbnails/"+cardFill.thumbnailphoto+")"}}
+                    >
+                        {cardFill.thumbnailphoto}
+                    </div>
+                )
+            }
+            
+            <div className="genetics-card__info">
+                <h3 className="genetics-card__header header-3">{cardFill.name}</h3>
+                <div className="genetics-card__type">
+                    {
+                        cardFill.type[0] === "sativa" ?
+                        <ArrowUpIcon className="genetics__key--icon genetics-card__type--icon--1" />
+                        :
+                        <ArrowDownIcon className="genetics__key--icon genetics-card__type--icon--2" />
+                    }
+                    <span className="genetics__key--icon-name">{strainType}</span>
                 </div>
+                    {
+                        cardFill.grow.length > 1 ?
+                        (
+                            <div className="genetics-card__care">
+                                <HomeIcon className="genetics__key--icon genetics-card__type--icon--3" />
+                                <SunIcon className="genetics__key--icon genetics-card__type--icon--4" />
+                                <span className="genetics__key--icon-name">Grows {strainGrow}</span>
+                            </div>
+                        )
+                        :
+                        cardFill.grow[0] === "indoors" ?
+                        (
+                            <div className="genetics-card__care">
+                                <HomeIcon className="genetics__key--icon genetics-card__type--icon--3" />
+                                <span className="genetics__key--icon-name">Grows {strainGrow}</span>
+                            </div>
+                        )
+                        :
+                        (
+                            <div className="genetics-card__care">
+                                <SunIcon className="genetics__key--icon genetics-card__type--icon--4" />
+                                <span className="genetics__key--icon-name">Grows {strainGrow}</span>
+                            </div>
+                        )
+
+                    }
+                <div className="genetics-card__btns">
+                    <CustomButton notALink className="card-btn">Contact Us</CustomButton>
+                    <WebsiteLink notALink linkClass="card-link">Quick View</WebsiteLink>
+                </div> 
+                <input type="hidden" value={cardFill} />
             </div>
-    );   
+        </div>     
+            
+    );  
 }

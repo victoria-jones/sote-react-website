@@ -105,4 +105,15 @@
         }
     }
 
+    //toggle class for styles
+    &__open {
+        z-index: 1000;
+        opacity: 1;
+        
+        &--wrapper {
+            height: 95vh;
+            bottom: 0;
+        }
+    }
+
 }

@@ -1,4 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
+import { createContext, useState } from 'react';
+import PopupProvider from './components/popupProvider.component';
 
 import './styles/main.styles.scss';
 
@@ -14,7 +16,10 @@ import Main from './components/main.component';
 import Popup from './components/popup.component';
 
 function App() {
+
+
   return (
+    <PopupProvider>
     <div className="App container">
       <Popup />
       <Navigation />
@@ -27,9 +32,11 @@ function App() {
           <Route path='/genetics' element={<Genetics/>} />
           <Route path='/consultation' element={<Consultation/>} />
         </Routes>
+        
       </Main>
       <Footer />
     </div>
+    </PopupProvider>
   );
 }
 
