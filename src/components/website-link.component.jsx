@@ -1,9 +1,11 @@
+import { useContext } from 'react';
+import PopupContext from '../context/popupContext.component';
 import { Link } from 'react-router-dom';
 
 import '../styles/components/website-link.styles.scss';
 
-export default function WebsiteLink ({ link, linkColor, linkLocation, linkClass, children, notALink }) {
-     
+export default function WebsiteLink ({ link, linkColor, linkLocation, linkClass, children, notALink, activatePopup }) {
+     const { setPopup } = useContext(PopupContext);
     
     switch(notALink) {
         case true:
@@ -13,7 +15,9 @@ export default function WebsiteLink ({ link, linkColor, linkLocation, linkClass,
                         ${linkColor ? `link--${linkColor}` : ''}
                         ${linkLocation ? `${linkLocation}__link` : ''}
                         ${linkLocation}__link
-                        ${linkClass}`}>
+                        ${linkClass}`}
+                    onClick={() => setPopup(true)}
+                >
                     { children }
                 </span>
             );

@@ -18,7 +18,7 @@ export default function SideMenu ({ listItems }) {
                     listItems.map((item, key) => {
                         return(
                             <li className="genetics__side-menu--item" key={`side-menu-item--${key}`}>
-                                <WebsiteLink notALink linkClass="genetics__side-menu--link" linkColor="green" key={`side-menu-link--${key}`}>
+                                <WebsiteLink notALink activatePopup linkClass="genetics__side-menu--link" linkColor="green" key={`side-menu-link--${key}`}>
                                     {item.name}
                                 </WebsiteLink>
                             </li>

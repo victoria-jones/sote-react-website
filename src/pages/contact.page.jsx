@@ -12,7 +12,7 @@ export default function Contact () {
                 pageTitle="Contact Us"
             >
                 <h2>Follow Us</h2>
-                <p class="contact__p">
+                <p className="contact__p">
                     Stay up to date with what's going on at SOTE Nursery. 
                     Be the first to know when new or existing strains are available!
                 </p>

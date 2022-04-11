@@ -107,12 +107,41 @@
 
     //toggle class for styles
     &__open {
-        z-index: 1000;
+        z-index: 10000;
         opacity: 1;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba($color-white, .5);
+        backdrop-filter: blur(5px);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: opacity .5s;
         
         &--wrapper {
             height: 95vh;
             bottom: 0;
+
+            position: relative;
+            background-color: $color-white;
+            width: 95vw;
+            max-width: 100rem;
+            max-height: 70rem;
+            display: flex;
+            overflow-x: hidden;
+            @include box-shadow-light;
+
+            transition: bottom .8s cubic-bezier(0.83, 0, 0.17, 1);
+
+            @include respond(tab-port) {
+                max-height: 95vh;
+            }
         }
     }
 

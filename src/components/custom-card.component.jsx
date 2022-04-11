@@ -10,7 +10,7 @@
 //create an auto image functionality if the strain does not have a thumbnail image
     //style it to be greyed out with the words "no image"
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import '../styles/components/custom-card.styles.scss';
 
 import CustomButton from './custom-button.component';
@@ -22,6 +22,7 @@ import { ReactComponent as SunIcon } from '../assets/icons/sun.svg';
 import { ReactComponent as MountainLogo } from '../assets/logos/mountain_logo.svg';
 
 export default function CustomCard ({ cardFill }) {
+
     const [strainGrow, setStrainGrow] = useState(null);
     const [strainType, setStrainType] = useState(null);
 
@@ -110,8 +111,8 @@ export default function CustomCard ({ cardFill }) {
 
                     }
                 <div className="genetics-card__btns">
-                    <CustomButton notALink className="card-btn">Contact Us</CustomButton>
-                    <WebsiteLink notALink linkClass="card-link">Quick View</WebsiteLink>
+                    <CustomButton notALink activatePopup className="card-btn">Contact Us</CustomButton>
+                    <WebsiteLink notALink activatePopup linkClass="card-link">Quick View</WebsiteLink>
                 </div> 
                 <input type="hidden" value={cardFill} />
             </div>
