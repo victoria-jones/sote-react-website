@@ -1,0 +1,27 @@
+@import '../main.styles.scss';
+
+.popup {
+    &__message-sent {
+        //display: none;
+        display: flex;
+        margin: 0 auto;
+
+        .message-sent--successful,
+        .message-sent--error {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: 80%;
+
+            h2 {
+                text-align: center;
+            }
+
+            @include respond(phone) {
+                width: 95%;
+            }
+        }
+    }
+}

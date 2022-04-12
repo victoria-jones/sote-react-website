@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import '../styles/components/website-link.styles.scss';
 
 export default function WebsiteLink ({ link, linkColor, linkLocation, linkClass, children, notALink, activatePopup }) {
-     const { setPopup } = useContext(PopupContext);
+     const { setPopup, setPopupType } = useContext(PopupContext);
     
     switch(notALink) {
         case true:
@@ -16,7 +16,10 @@ export default function WebsiteLink ({ link, linkColor, linkLocation, linkClass,
                         ${linkLocation ? `${linkLocation}__link` : ''}
                         ${linkLocation}__link
                         ${linkClass}`}
-                    onClick={() => setPopup(true)}
+                    onClick={() => {
+                        setPopup(true);
+                        setPopupType("genetics");
+                    }}
                 >
                     { children }
                 </span>

@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { createContext, useState } from 'react';
-import PopupProvider from './components/popupProvider.component';
+import PopupProvider from './context/popupProvider.component';
 
 import './styles/main.styles.scss';
 
