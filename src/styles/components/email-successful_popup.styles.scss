@@ -4,6 +4,7 @@
     &__message-sent {
         //display: none;
         display: flex;
+
         margin: 0 auto;
 
         .message-sent--successful,
@@ -22,6 +23,13 @@
             @include respond(phone) {
                 width: 95%;
             }
+        }
+
+        .message-sent--successful {
+            display: none;
+        }
+        .message-sent--error {
+            display: flex;
         }
     }
 }
