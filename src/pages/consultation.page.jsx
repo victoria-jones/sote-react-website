@@ -9,7 +9,8 @@ export default function Consultation () {
 
     // drop down list items to pass over to 'drop-down-list-infobox' population
     const item1 = {
-        'name': 'Greenhouse design'
+        'name': 'Greenhouse design',
+        'info': 'Complete grow design/oversee buildouts from start to finish. Both complete build and renovation. (indoor, greenhouse, outdoor/full-term farm)'
     };
     const item2 = {
         'name': 'Greenhouse build management'
