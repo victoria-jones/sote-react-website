@@ -5,8 +5,8 @@ import { useLocation } from "react-router-dom";
 import CustomButton from './custom-button.component';
 
 import bg_video from '../assets/videos/bg_video_01.mp4';
-import sote_full_logo from '../assets/logos/SOTE-full-logo-white.png';
-import sote_full_logo_stacked from '../assets/logos/SOTE-full-logo-stacked-white.png';
+import sote_full_logo from '../assets/logos/sote-logo-expanded_white.png';
+import sote_full_logo_stacked from '../assets/logos/sote-logo-stacked-simple_white.png';
 
 import { ReactComponent as ArrowUpIcon } from '../assets/icons/arrow-with-circle-up.svg';
 import { ReactComponent as ArrowDownIcon } from '../assets/icons/arrow-with-circle-down.svg';

@@ -7,7 +7,7 @@ import '../styles/components/navigation.styles.scss';
 import { ReactComponent as FacebookIcon } from '../assets/icons/facebook.svg';
 import { ReactComponent as InstagramIcon } from '../assets/icons/instagram.svg';
 import { ReactComponent as SoteIcon } from '../assets/icons/SOTE_mobile.svg';
-import soteLogo from '../assets/logos/SOTE_logo.png';
+import soteLogo from '../assets/logos/sote-symbol-with-logo.png';
 
 export default function Navigation () {
 

@@ -3,7 +3,7 @@ import '../styles/components/footer.styles.scss';
 import WebsiteLink from './website-link.component';
 import SocialNav from './social-nav.component';
 
-import soteLogo from '../assets/logos/SOTE_logo.png';
+import soteLogo from '../assets/logos/sote-symbol-with-logo.png';
 
 export default function Footer () {
     const date = new Date();
