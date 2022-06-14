@@ -15,6 +15,8 @@ import Header from './components/header.component';
 import Main from './components/main.component';
 import Popup from './components/popup.component';
 
+import Axios from './pages/axios_practice.page'
+
 function App() {
 
 
@@ -31,6 +33,7 @@ function App() {
           <Route path='/contact' element={<Contact/>} />
           <Route path='/genetics' element={<Genetics/>} />
           <Route path='/consultation' element={<Consultation/>} />
+          <Route path='/axios-practice' element={<Axios/>} />
         </Routes>
         
       </Main>
