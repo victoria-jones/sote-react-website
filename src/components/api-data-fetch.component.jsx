@@ -13,7 +13,7 @@
 
 import { useState, useEffect } from 'react';
 
-export default function Axios (endpoint) {
+export default function ApiDataFetch (endpoint) {
     const [data, setData] = useState(null);
     const [error, setError] = useState("");
     const [loaded, setLoaded] = useState(false);
@@ -22,8 +22,8 @@ export default function Axios (endpoint) {
     useEffect(() => {
         const loadAsyncStuff = async () => {
             try { 
-                const response = await fetch(`http://127.0.0.1:8000/api/${endpoint}`);
-                const json = await response.json();
+                const res = await fetch(`http://127.0.0.1:8000/api/${endpoint}`);
+                const json = await res.json();
 
                 setData(json)
             } catch (error) {

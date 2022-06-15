@@ -1,9 +1,11 @@
 import '../styles/components/side-menu.styles.scss';
 
+import { useState, useEffect } from 'react';
 import WebsiteLink from './website-link.component';
 import strains from '../assets/json/strains.json';
 
 export default function SideMenu ({ listItems }) {
+
     return(
         <nav className="genetics__side-menu">
 
@@ -19,7 +21,7 @@ export default function SideMenu ({ listItems }) {
                         return(
                             <li className="genetics__side-menu--item" key={`side-menu-item--${key}`}>
                                 <WebsiteLink notALink activatePopup linkClass="genetics__side-menu--link" linkColor="green" key={`side-menu-link--${key}`}>
-                                    {item.name}
+                                    {item.strain_name}
                                 </WebsiteLink>
                             </li>
                         );

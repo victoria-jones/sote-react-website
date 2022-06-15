@@ -1,14 +1,40 @@
 import '../styles/pages/genetics.styles.scss';
 
+import { useState, useEffect } from 'react';
 import SideMenu from '../components/side-menu.component';
 import FilterMenu from '../components/filter-menu.component';
 import CustomCard from '../components/custom-card.component';
 import ContactSection from '../components/contact-section.component';
 import SocialNav from '../components/social-nav.component';
+import ApiDataFetch from '../components/api-data-fetch.component'
 
-import strains from '../assets/json/strains.json';
+//import strains from '../assets/json/strains.json';
 
 export default function Genetics () {
+
+    const [strains, setStrains] = useState([]);
+    const [error, setError] = useState("");
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        const getStrainData = async () => {
+            let data;
+            try { 
+                const res = await fetch(`http://127.0.0.1:8000/api/strains`);
+                const json = await res.json();
+    
+                data = json;
+            } catch (error) {
+                setError(error);
+            } finally {
+                setLoaded(true);
+                setStrains(data);
+            }
+        };
+
+        getStrainData();
+    },[])
+
     return(
         <div className="mainContentContainer">
             <section className="genetics">

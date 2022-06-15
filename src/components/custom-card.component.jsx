@@ -23,15 +23,17 @@ import { ReactComponent as MountainLogo } from '../assets/logos/mountain_logo.sv
 
 export default function CustomCard ({ cardFill }) {
 
-    const [strainGrow, setStrainGrow] = useState(null);
+    const [strainGrowEnvironment, setStrainGrowEnvironment] = useState(null);
     const [strainType, setStrainType] = useState(null);
+    const [strainName, setStrainName] = useState(null);
+    const [strainThumbnail, setStrainThumbnail] = useState(null);
 
     useEffect(()=> {
         //create string dislayable string from grow/type lists
-        let growList = [];
+        /*let growList = [];
         let growText;
-        for(let i in cardFill.grow){
-            growText = cardFill.grow[i];
+        for(let i in cardFill.strain_optimal_growing_environment){
+            growText = i.value;
             growText = growText.charAt(0).toUpperCase() + growText.substr(1);
             growList.push(growText);
         }
@@ -44,15 +46,20 @@ export default function CustomCard ({ cardFill }) {
             typeText = typeText.charAt(0).toUpperCase() + typeText.substr(1);
             typeList.push(typeText);
         }
-        setStrainType(typeList.join("-"));
+        setStrainType(typeList.join("-"));*/
 
+        //get the strain information for display on the cards: strain_type, strain_optimal_growing_environment
+        setStrainGrowEnvironment(cardFill.strain_optimal_growing_environment);
+        setStrainType(cardFill.strain_type);
+        setStrainName(cardFill.strain_name);
+        setStrainThumbnail(cardFill.strain_image_thumbnail);
     },[cardFill]);
 
     return( 
 
         <div className="genetics-card">
             {
-                cardFill.thumbnailphoto === "no photo" || cardFill.thumbnailphoto === "" ?
+                strainThumbnail === "no photo" || strainThumbnail === "" ?
                 (
                     <div className="genetics-card__img"
                         style={{backgroundImage: "url(/images/thumbnails/nophoto-tb.jpg)"}}
@@ -66,18 +73,18 @@ export default function CustomCard ({ cardFill }) {
                 :
                 (
                     <div className="genetics-card__img"
-                        style={{backgroundImage: "url(/images/thumbnails/"+cardFill.thumbnailphoto+")"}}
+                        style={{backgroundImage: "url(/images/thumbnails/"+strainThumbnail+")"}}
                     >
-                        {cardFill.thumbnailphoto}
+                        {strainThumbnail}
                     </div>
                 )
             }
             
             <div className="genetics-card__info">
-                <h3 className="genetics-card__header header-3">{cardFill.name}</h3>
+                <h3 className="genetics-card__header header-3">{strainName}</h3>
                 <div className="genetics-card__type">
                     {
-                        cardFill.type[0] === "sativa" ?
+                        strainType === "sativa" || strainType === "sativa-dominant" ?
                         <ArrowUpIcon className="genetics__key--icon genetics-card__type--icon--1" />
                         :
                         <ArrowDownIcon className="genetics__key--icon genetics-card__type--icon--2" />
@@ -85,27 +92,27 @@ export default function CustomCard ({ cardFill }) {
                     <span className="genetics__key--icon-name">{strainType}</span>
                 </div>
                     {
-                        cardFill.grow.length > 1 ?
+                        strainGrowEnvironment === "indoors-outdoors" ?
                         (
                             <div className="genetics-card__care">
                                 <HomeIcon className="genetics__key--icon genetics-card__type--icon--3" />
                                 <SunIcon className="genetics__key--icon genetics-card__type--icon--4" />
-                                <span className="genetics__key--icon-name">Grows {strainGrow}</span>
+                                <span className="genetics__key--icon-name">Grows {strainGrowEnvironment}</span>
                             </div>
                         )
                         :
-                        cardFill.grow[0] === "indoors" ?
+                        strainGrowEnvironment === "indoors" ?
                         (
                             <div className="genetics-card__care">
                                 <HomeIcon className="genetics__key--icon genetics-card__type--icon--3" />
-                                <span className="genetics__key--icon-name">Grows {strainGrow}</span>
+                                <span className="genetics__key--icon-name">Grows {strainGrowEnvironment}</span>
                             </div>
                         )
                         :
                         (
                             <div className="genetics-card__care">
                                 <SunIcon className="genetics__key--icon genetics-card__type--icon--4" />
-                                <span className="genetics__key--icon-name">Grows {strainGrow}</span>
+                                <span className="genetics__key--icon-name">Grows {strainGrowEnvironment}</span>
                             </div>
                         )
 
