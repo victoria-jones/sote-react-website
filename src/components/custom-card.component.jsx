@@ -82,15 +82,35 @@ export default function CustomCard ({ cardFill }) {
             
             <div className="genetics-card__info">
                 <h3 className="genetics-card__header header-3">{strainName}</h3>
-                <div className="genetics-card__type">
+                
                     {
                         strainType === "sativa" || strainType === "sativa-dominant" ?
-                        <ArrowUpIcon className="genetics__key--icon genetics-card__type--icon--1" />
+                        (
+                            <div className="genetics-card__type">
+                                <ArrowUpIcon className="genetics__key--icon genetics-card__type--icon--1" />
+                                <span className="genetics__key--icon-name">{strainType}</span>
+                            </div>
+                        )
+                        
                         :
-                        <ArrowDownIcon className="genetics__key--icon genetics-card__type--icon--2" />
+                            strainType === "indica" || strainType ==="indica-dominant" ?
+                            (
+                                <div className="genetics-card__type">
+                                    <ArrowDownIcon className="genetics__key--icon genetics-card__type--icon--2" />
+                                    <span className="genetics__key--icon-name">{strainType}</span>
+                                </div>  
+                            )
+                            
+                            :
+                            (
+                                <div className="genetics-card__type">
+                                    <ArrowUpIcon className="genetics__key--icon genetics-card__type--icon--1" />
+                                    <ArrowDownIcon className="genetics__key--icon genetics-card__type--icon--2" />
+                                    <span className="genetics__key--icon-name">{strainType}</span>
+                                </div> 
+                            )
                     }
-                    <span className="genetics__key--icon-name">{strainType}</span>
-                </div>
+                    
                     {
                         strainGrowEnvironment === "indoors-outdoors" ?
                         (

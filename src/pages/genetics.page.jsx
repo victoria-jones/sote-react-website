@@ -6,9 +6,18 @@ import FilterMenu from '../components/filter-menu.component';
 import CustomCard from '../components/custom-card.component';
 import ContactSection from '../components/contact-section.component';
 import SocialNav from '../components/social-nav.component';
-import ApiDataFetch from '../components/api-data-fetch.component'
+//import ApiDataFetch from '../components/api-data-fetch.component'
 
 //import strains from '../assets/json/strains.json';
+
+
+/**********
+
+    change what is displayed on genetics page in case data cannot be fetched
+    so that the whole page doesn't crash. As of now the page will just crash.
+
+
+*/
 
 export default function Genetics () {
 
