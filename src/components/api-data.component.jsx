@@ -1,6 +1,19 @@
+/***************
+ * 
+ *  use this component to fetch data from the api without needing to 
+ *  rewrite the fetch every time
+ *  
+ *  just specify what data is wanted with these endpoints:
+ *      - nurseries
+ *      - strains
+ *      - nursery_strains
+ *      - stock
+ * 
+ */
+
 import { useState, useEffect } from 'react';
 
-export default function Axios () {
+export default function Axios (endpoint) {
     const [data, setData] = useState(null);
     const [error, setError] = useState("");
     const [loaded, setLoaded] = useState(false);
@@ -9,7 +22,7 @@ export default function Axios () {
     useEffect(() => {
         const loadAsyncStuff = async () => {
             try { 
-                const response = await fetch('http://127.0.0.1:8000/api/strains');
+                const response = await fetch(`http://127.0.0.1:8000/api/${endpoint}`);
                 const json = await response.json();
 
                 setData(json)
@@ -22,13 +35,5 @@ export default function Axios () {
         loadAsyncStuff();
     }, []);
 
-    return(
-        <div>
-            {`
-                data: ${data}, 
-                error: ${error}, 
-                loaded: ${loaded}
-            `}
-        </div>
-    );
+    return{ data, error, loaded};
 }
