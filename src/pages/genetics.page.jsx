@@ -46,35 +46,56 @@ export default function Genetics () {
 
     return(
         <div className="mainContentContainer">
-            <section className="genetics">
-                <FilterMenu />
-                <SideMenu listItems={strains} />
+            {
+                error === "" ?
+                (
+                    <section className="genetics">
+                        <FilterMenu />
+                        <SideMenu listItems={strains} />
 
-                <div className="genetics__container">
-                    <div className="genetics-section">
-                        <h2 className="genetics-section__header header-2">Featured</h2>
-                        <p className="genetics-section__p">
-                            Please know that all of our products are seasonal or temporary. Here is a current featured list we held recently that are our patients' favorites. All is grown on an organic metrc compliant farm. 
-                        </p>
-                    
-                    </div>
+                        <div className="genetics__container">
+                            <div className="genetics-section">
+                                <h2 className="genetics-section__header header-2">Featured</h2>
+                                <p className="genetics-section__p">
+                                    Please know that all of our products are seasonal or temporary. Here is a current featured list we held recently that are our patients' favorites. All is grown on an organic metrc compliant farm. 
+                                </p>
+                            
+                            </div>
+                            
+                            
+                            <div className="genetics-card__container">
 
-                    <div className="genetics-card__container">
+                                {
+                                    strains.map((strain, key) => {
+                                        return(
+                                            <CustomCard cardFill={strain} key={key} />
+                                        ); 
+                                    })
+                                }
 
-                        {
-                            strains.map((strain, key) => {
-                                return(
-                                    <CustomCard cardFill={strain} key={key} />
-                                ); 
-                            })
-                        }
+                            </div>
 
-                    </div>
+                            <div className="genetics-section"></div>
+                            <div className="genetics-section"></div>
+                        </div>
+                    </section>
+                )
+                :
+                (
+                    <section className="genetics">
 
-                    <div className="genetics-section"></div>
-                    <div className="genetics-section"></div>
-                </div>
-            </section>
+                        <div className="genetics-section">
+                            <h2 className="genetics-section__header header-2">Whoops!</h2>
+                            <p className="genetics-section__p">
+                                There was a problem loading the strains. Please try to refresh the page or check back later.
+                            </p>
+                        
+                        </div>
+
+                    </section>
+                )
+            }
+            
             
                 <ContactSection includeHeader componentPage="genetics" headerClass="contact__header margin-bottom-med margin-top-med">
                     <div className="contact__header--wrapper">
