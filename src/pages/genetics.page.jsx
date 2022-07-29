@@ -20,6 +20,9 @@ import SocialNav from '../components/social-nav.component';
 */
 
 export default function Genetics () {
+    //for now this only fetches all strains, it needs
+    //to fetch only strains in stock, this needs to be sorted
+    //out on the backend :)
 
     const [strains, setStrains] = useState([]);
     const [error, setError] = useState("");
@@ -28,10 +31,10 @@ export default function Genetics () {
     useEffect(() => {
         const getStrainData = async () => {
             let data;
-            try { 
+            try {
                 const res = await fetch(`http://127.0.0.1:8000/api/strains`);
                 const json = await res.json();
-    
+
                 data = json;
             } catch (error) {
                 setError(error);
@@ -57,19 +60,19 @@ export default function Genetics () {
                             <div className="genetics-section">
                                 <h2 className="genetics-section__header header-2">Featured</h2>
                                 <p className="genetics-section__p">
-                                    Please know that all of our products are seasonal or temporary. Here is a current featured list we held recently that are our patients' favorites. All is grown on an organic metrc compliant farm. 
+                                    Please know that all of our products are seasonal or temporary. Here is a current featured list we held recently that are our patients' favorites. All is grown on an organic metrc compliant farm.
                                 </p>
-                            
+
                             </div>
-                            
-                            
+
+
                             <div className="genetics-card__container">
 
                                 {
                                     strains.map((strain, key) => {
                                         return(
                                             <CustomCard cardFill={strain} key={key} />
-                                        ); 
+                                        );
                                     })
                                 }
 
@@ -89,14 +92,14 @@ export default function Genetics () {
                             <p className="genetics-section__p">
                                 There was a problem loading the strains. Please try to refresh the page or check back later.
                             </p>
-                        
+
                         </div>
 
                     </section>
                 )
             }
-            
-            
+
+
                 <ContactSection includeHeader componentPage="genetics" headerClass="contact__header margin-bottom-med margin-top-med">
                     <div className="contact__header--wrapper">
                         <h2>Have any Questions?</h2>
@@ -105,7 +108,7 @@ export default function Genetics () {
                         </p>
 
                         <SocialNav navClass="contact__social-nav" />
-                    </div> 
+                    </div>
                 </ContactSection>
 
         </div>
